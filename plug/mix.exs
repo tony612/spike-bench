@@ -30,6 +30,7 @@ defmodule Spike.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:cowboy, "~> 1.0"},
-     {:plug, "~> 1.0"}]
+     {:plug, "~> 1.0"},
+     {:httpoison, "~> 0.10.0"}]
   end
 end

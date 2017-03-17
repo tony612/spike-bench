@@ -10,8 +10,7 @@ defmodule Spike.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      # Starts a worker by calling: Spike.Worker.start_link(arg1, arg2, arg3)
-      # worker(Spike.Worker, [arg1, arg2, arg3]),
+      Plug.Adapters.Cowboy.child_spec(:http, Spike.Router, [], [port: Application.get_env(:spike, :port)])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

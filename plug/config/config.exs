@@ -10,7 +10,7 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :spike, key: :value
+config :spike, threshold: 95, port: 8080
 #
 # And access this configuration in your application as:
 #
