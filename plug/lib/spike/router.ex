@@ -10,6 +10,11 @@ defmodule Spike.Router do
     send_resp(conn, 200, "ok")
   end
 
+  get "/slow" do
+    HTTPoison.get "http://google.com"
+    send_resp(conn, 200, "ok")
+  end
+
   get "/unstable" do
     num = Enum.random(@random_range)
     if num >= Application.get_env(:spike, :threshold) do
