@@ -10,7 +10,7 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-config :spike, threshold: 95, port: 8000
+config :spike, threshold: 95, port: 8080
 
 config :prometheus, Spike.MetricsExporter,
   path: "/metrics"
