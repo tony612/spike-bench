@@ -6,6 +6,9 @@ defmodule Spike.Application do
   use Application
 
   def start(_type, _args) do
+    Spike.Instrumenter.setup()
+    Spike.MetricsExporter.setup()
+
     import Supervisor.Spec, warn: false
 
     # Define workers and child supervisors to be supervised

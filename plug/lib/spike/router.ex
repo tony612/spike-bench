@@ -3,6 +3,8 @@ defmodule Spike.Router do
 
   @random_range 1..100
 
+  plug Spike.Instrumenter
+  plug Spike.MetricsExporter
   plug :match
   plug :dispatch
 

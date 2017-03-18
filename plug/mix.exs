@@ -32,6 +32,7 @@ defmodule Spike.Mixfile do
     [{:cowboy, "~> 1.0"},
      {:plug, "~> 1.0"},
      {:httpoison, "~> 0.10.0"},
-     {:distillery, "~> 1.0"}]
+     {:distillery, "~> 1.0"},
+     {:prometheus_plugs, "~> 1.1.1"}]
   end
 end

@@ -11,6 +11,13 @@ use Mix.Config
 # You can configure for your application as:
 #
 config :spike, threshold: 95, port: 8000
+
+config :prometheus, Spike.MetricsExporter,
+  path: "/metrics"
+
+config :prometheus, Spike.Instrumenter,
+  labels: [:method, :host, :scheme, :path],
+  duration_unit: :seconds
 #
 # And access this configuration in your application as:
 #
