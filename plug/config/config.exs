@@ -17,6 +17,7 @@ config :prometheus, Spike.MetricsExporter,
 
 config :prometheus, Spike.Instrumenter,
   labels: [:method, :host, :scheme, :path],
+  duration_buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, 20],
   duration_unit: :seconds
 #
 # And access this configuration in your application as:
