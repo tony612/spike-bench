@@ -13,8 +13,10 @@ defmodule Spike.Router do
   end
 
   get "/slow" do
-    HTTPoison.get "http://google.com"
-    send_resp(conn, 200, "ok")
+    case HTTPoison.get "http://google.com" do
+      {:ok, %HTTPoison.Response{status_code: code, body: body}} -> send_resp(conn, code, body)
+      {:error, %HTTPoison.Error{reason: reason}} -> send_resp(conn, 500, to_string(reason))
+    end
   end
 
   get "/unstable" do
